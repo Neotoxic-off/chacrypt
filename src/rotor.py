@@ -1,11 +1,10 @@
 from src.config import Config
 
 class Rotor:
-    def __init__(self, name):
-        self.config = Config(f"configuration/{name}.json")
+    def __init__(self, default: int):
         self.minimum = 32
         self.maximum = 126
-        self.rotation = self.config.config["default"]
+        self.rotation = default
 
     def get(self, character):
         return (self.__rotate__(character))
